@@ -3,7 +3,12 @@ namespace daddyy\Endecode {
 
     class Util
     {
-        public static function explode2array($strings = array(), $delimiter = '.')
+        /**
+         * @param  array  $strings
+         * @param  string $delimiter
+         * @return array
+         */
+        public static function explode2array(array $strings, string $delimiter = '.'): array
         {
             $result = array();
             foreach ($strings as $key => $value) {
@@ -18,8 +23,14 @@ namespace daddyy\Endecode {
             return $result;
         }
 
-        public static function join2array($mixed, $joiner)
+        /**
+         * @param  array  $mixed
+         * @param  string $joiner
+         * @return array
+         */
+        public static function join2array(array $mixed, string $joiner): array
         {
+            $flatArray = array();
             foreach ($mixed as $key => $value) {
                 if (is_object($value) || is_array($value)) {
                     $aTemp = self::join2array($value, $joiner);
@@ -34,7 +45,11 @@ namespace daddyy\Endecode {
             return $flatArray;
         }
 
-        public static function toArray($mixed)
+        /**
+         * @param  mixed $mixed
+         * @return array
+         */
+        public static function toArray($mixed): array
         {
             if (is_object($mixed)) {
                 $mixed = (array) $mixed;
@@ -49,17 +64,24 @@ namespace daddyy\Endecode {
             return $mixed;
         }
 
-        public static function isJson($string)
+        /**
+         * @param  string  $string
+         * @return boolean
+         */
+        public static function isJson(string $string): bool
         {
             $result = false;
-            if (is_string($string)) {
-                json_decode($string);
-                $result = (json_last_error() == JSON_ERROR_NONE);
-            }
+            json_decode($string);
+            $result = (json_last_error() == JSON_ERROR_NONE);
             return $result;
         }
 
-        public static function charset($mixed, $config)
+        /**
+         * @param  string $string
+         * @param  array  $config
+         * @return string
+         */
+        public static function charset(string $string, array $config = array()): string
         {
             $result = $mixed;
             if (is_string($mixed)) {
@@ -72,12 +94,21 @@ namespace daddyy\Endecode {
             return $result;
         }
 
-        public static function toCharset($string, $charset)
+        /**
+         * @param  string $string
+         * @param  string $charset
+         * @return string
+         */
+        public static function toCharset(string $string, string $charset): string
         {
             return $string;
         }
-
-        public static function fromCharset($string, $charset)
+        /**
+         * @param  string $string
+         * @param  string $charset
+         * @return string
+         */
+        public static function fromCharset(string $string, string $charset): string
         {
             return $string;
         }
