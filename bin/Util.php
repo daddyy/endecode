@@ -34,7 +34,6 @@ namespace daddyy\Endecode {
             return $flatArray;
         }
 
-
         public static function toArray($mixed)
         {
             if (is_object($mixed)) {
@@ -43,7 +42,7 @@ namespace daddyy\Endecode {
             if (is_array($mixed)) {
                 foreach ($mixed as $key => $value) {
                     unset($mixed[$key]);
-                    $key = str_ireplace(array('*', "\x00"), '', $key);
+                    $key         = str_ireplace(array('*', "\x00"), '', $key);
                     $mixed[$key] = self::toArray($value);
                 }
             }
@@ -60,7 +59,8 @@ namespace daddyy\Endecode {
             return $result;
         }
 
-        public static function charset($mixed, $config) {
+        public static function charset($mixed, $config)
+        {
             $result = $mixed;
             if (is_string($mixed)) {
                 if (isset($config['from_charset'])) {
@@ -72,12 +72,14 @@ namespace daddyy\Endecode {
             return $result;
         }
 
-        public static function toCharset($string, $charset) {
+        public static function toCharset($string, $charset)
+        {
             return $string;
         }
 
-        public static function fromCharset($string, $charset) {
+        public static function fromCharset($string, $charset)
+        {
             return $string;
         }
-    }   
+    }
 }

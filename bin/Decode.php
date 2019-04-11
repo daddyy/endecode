@@ -121,10 +121,10 @@ namespace daddyy\Endecode {
             }
 
             $lines = explode($ending_line, $mixed);
-            $head = false;
+            $head  = false;
             if ($first_line && empty($head_line)) {
                 $head = str_getcsv(reset($lines), $delimiter, $enclosure);
-                $key = key($lines);
+                $key  = key($lines);
                 unset($lines[$key]);
             }
             foreach ($lines as $key => $line) {

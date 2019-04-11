@@ -181,7 +181,7 @@ namespace daddyy\Endecode {
          * @param     array           $config    Array of options to be applied while encoding
          * @return    self                       Instance of self
          */
-        public function initXml(array $mixed, array $config):self
+        public function initXml(array $mixed, array $config): self
         {
             $init          = isset($config['init']) ? $config['init'] : array();
             $version       = isset($init['version']) ? $init['version'] : '1.0';

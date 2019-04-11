@@ -50,10 +50,11 @@ namespace daddyy\Endecode {
          * @param     array     $config    array of options for the decoder
          * @return    array                An associative array | object decoded from input string
          */
-        public static function decode(?string $input, string $type, array $config = [])//mixed
+        public static function decode( ? string $input, string $type, array $config = []) //mixed
+
         {
-            $input = is_null($input) ? 0 : $input;
-            $input = Util::fromCharset($input, $config);
+            $input    = is_null($input) ? 0 : $input;
+            $input    = Util::fromCharset($input, $config);
             $instance = self::convert($input, $type, 'decode', $config);
             try {
                 $result = $instance->getResult();
