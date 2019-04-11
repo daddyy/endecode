@@ -48,10 +48,9 @@ namespace daddyy\Endecode {
          * @param     string    $input     string to be decoded
          * @param     string    $type      input format
          * @param     array     $config    array of options for the decoder
-         * @return    array                An associative array | object decoded from input string
+         * @return    mixed                An associative array | object decoded from input string
          */
-        public static function decode( ? string $input, string $type, array $config = []) //mixed
-
+        public static function decode( ? string $input, string $type, array $config = [])
         {
             $input    = is_null($input) ? 0 : $input;
             $input    = Util::fromCharset($input, $config);

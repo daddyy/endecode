@@ -1,7 +1,9 @@
 # endecode
 - is a simple decoder and encoder
 
-# usage
+## usage
+```
+#json
 $json = Endecode::encode($string, 'json');
-
-$string = Endecode::decode($json, 'json');
+$string = Endecode::decode($mixed, 'serialize');
+```
