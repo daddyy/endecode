@@ -1,11 +1,8 @@
 # endecode
 - is a simple decoder and encoder
 
-## encodes
-- from string to json, base64, serialize, query string, XML (LaLit\XML2Array)
-
-## decodes
-- from json, serialize, base64, query string, XML to string (LaLit\Array2XML)
+## encodes + decodes
+- from <> to json, uu, bin2hex, hex2bin, utf8, base64, serialize, query string, XML (LaLit\XML2Array)
 
 ## usage
 ```

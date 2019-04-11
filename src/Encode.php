@@ -94,6 +94,26 @@ namespace daddyy\Endecode {
         /**
          * @param  string $mixed
          * @param  array  $config
+         * @return self   Instance of self
+         */
+        public function iniHexBin(string $mixed, array $config): self 
+        {
+            return Decode::iniHexBin($string, $config);
+        }
+
+        /**
+         * @param  string $mixed
+         * @param  array  $config
+         * @return self   Instance of self
+         */
+        public function iniBinHex(string $mixed, array $config): self 
+        {
+            return Decode::iniBinHex($string, $config);
+        }
+
+        /**
+         * @param  string $mixed
+         * @param  array  $config
          * @return self
          */
         public function initUf8(string $mixed, array $config): self
