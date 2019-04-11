@@ -3,4 +3,5 @@
 
 # usage
 $json = Endecode::encode($string, 'json');
+
 $string = Endecode::decode($json, 'json');

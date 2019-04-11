@@ -51,6 +51,7 @@ namespace daddyy\Endecode {
          * @return    array                An associative array | object decoded from input string
          */
         public static function decode( ? string $input, string $type, array $config = []) //mixed
+
         {
             $input    = is_null($input) ? 0 : $input;
             $input    = Util::fromCharset($input, $config);
@@ -63,21 +64,5 @@ namespace daddyy\Endecode {
 
             return $result;
         }
-
-        ///**
-        // * Base function with common instruction for $this::encode/decode
-        // * @param     array|object                                             $mixed
-        // * @param     string                                                   $type
-        // * @param     string                                                   $direction
-        // * @return    daddyy\Endecode\Encode | daddyy\Endecode\Decode    depends on direction
-        // */
-        //public static function convert($input, string $type, string $direction, array $config = array())
-        //{
-        //    $instance = self::init($input, $type, $direction, $config);
-        //    $result   = $instance;
-        //    return $result;
-        //}
-
     }
-
 }
