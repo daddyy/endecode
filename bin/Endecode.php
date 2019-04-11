@@ -8,11 +8,11 @@ namespace daddyy\Endecode {
     {
         /**
          * Constructs decoder/encoder object and calls the right method on it and returns the instance
-         * @param  array|object|string                                      $input        input to be processed
-         * @param  string                                                   $type         [description]
-         * @param  string                                                   $direction    [description]
-         * @param  array                                                    $config       array of options for the decoder
-         * @return \daddyy\Endecode\Encode|daddyy\Endecode\Decode                  instance of encoder/decoder
+         * @param  array|object|string   $input        input to be processed
+         * @param  string                $type         json|xml|base64|query|csv|serialize
+         * @param  string                $direction    encode|decode
+         * @param  array                 $config       array of options for the decoder|encoder
+         * @return \daddyy\Endecode\Encode|daddyy\Endecode\Decode instance of encoder/decoder
          */
         public static function convert($input, string $type, string $direction, array $config = [])
         {
