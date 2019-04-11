@@ -67,6 +67,54 @@ namespace daddyy\Endecode {
         }
 
         /**
+         * @param  string $mixed
+         * @param  array  $config
+         * @return self   Instance of self
+         */
+        public function initUu(string $mixed, array $config): self 
+        {
+            $result = convert_uudecode($mixed);
+            $this->setMe($mixed, $config, $result);
+            return $this;
+        }
+
+        /**
+         * @param  string $mixed
+         * @param  array  $config
+         * @return self
+         */
+        public function initUf8(string $mixed, array $config): self
+        {
+            $result = utf8_decode($mixed);
+            $this->setMe($mixed, $config, $result);
+            return $this;
+        }
+
+        /**
+         * @param  string $mixed
+         * @param  array  $config
+         * @return self   Instance of self
+         */
+        public function iniHexBin(string $mixed, array $config): self 
+        {
+            $result = hex2bin($mixed);
+            $this->setMe($mixed, $config, $result);
+            return $this;
+        }
+
+        /**
+         * @param  string $mixed
+         * @param  array  $config
+         * @return self   Instance of self
+         */
+        public function iniBinHex(string $mixed, array $config): self 
+        {
+            $result = bin2hex($mixed);
+            $this->setMe($mixed, $config, $result);
+            return $this;
+        }
+
+        /**
          * Unserialize a string
          * @todo check isBase65
          * @param     string    $mixed     Input to be decoded
