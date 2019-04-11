@@ -2,10 +2,10 @@
 - is a simple decoder and encoder
 
 ## encodes
-- from string to json, serialize, query string, XML (LaLit\XML2Array)
+- from string to json, base64, serialize, query string, XML (LaLit\XML2Array)
 
 ## decodes
-- from json, serialize, query string, XML to string (LaLit\Array2XML)
+- from json, serialize, base64, query string, XML to string (LaLit\Array2XML)
 
 ## usage
 ```

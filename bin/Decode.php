@@ -40,7 +40,7 @@ namespace daddyy\Endecode {
         }
 
         /**
-         * @todo
+         * @todo check isBase65
          */
         public function initBase64($mixed, array $config = []): self
         {
@@ -68,6 +68,7 @@ namespace daddyy\Endecode {
 
         /**
          * Unserialize a string
+         * @todo check isBase65
          * @param     string    $mixed     Input to be decoded
          * @param     array     $config    Array of options to be applied while decoding a string
          * @return    self                 Instance of self

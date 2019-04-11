@@ -94,6 +94,7 @@ namespace daddyy\Endecode {
 
         /**
          * Converts array|object to csv string
+         * @todo      find a better way to encode multidimensional array|object
          * @param     array|object    $mixed     Input to be encoded
          * @param     array           $config    Array of options to be applied while encoding
          * @return    self                       Instance of self
