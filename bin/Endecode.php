@@ -52,11 +52,8 @@ namespace daddyy\Endecode {
          */
         public static function decode(?string $input, string $type, array $config = [])//mixed
         {
-//<<<<<<< HEAD
-            $input = Util::fromCharset($input, $config);
-//=======
             $input = is_null($input) ? 0 : $input;
-//>>>>>>> dcf1b06b39f509e5d156b2c79333eaba22072690
+            $input = Util::fromCharset($input, $config);
             $instance = self::convert($input, $type, 'decode', $config);
             try {
                 $result = $instance->getResult();
