@@ -6,6 +6,7 @@ namespace daddyy\Endecode {
     /**
      * A helper for decoding string and parsing it to either array or string
      * Can parse Base64, json, csv, xml, serialized php strings and querystrings
+     * @author fiala.pvl@gmail.com
      */
     class Decode
     {

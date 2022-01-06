@@ -3,6 +3,7 @@ namespace daddyy\Endecode {
 
     /**
      * Static class that delegates instructions to a \daddyy\Endecode\(Encode|Decode)
+     * @author fiala.pvl@gmail.com
      */
     class Endecode
     {
@@ -38,7 +39,10 @@ namespace daddyy\Endecode {
             } catch (Exception $e) {
                 print_r($e->getMessage());
             }
-            $result = Util::toCharset($result, $config);
+            $charset  = isset($config['toCharset']) ? $config['toCharset'] : false;
+            if ($charset) {
+                $result = Util::toCharset($result, $config);
+            }
 
             return $result;
         }
@@ -53,7 +57,10 @@ namespace daddyy\Endecode {
         public static function decode( ? string $input, string $type, array $config = [])
         {
             $input    = is_null($input) ? 0 : $input;
-            $input    = Util::fromCharset($input, $config);
+            $charset  = isset($config['fromCharset']) ? $config['fromCharset'] : false;
+            if ($charset) {
+                $input    = Util::fromCharset($input, $charset);
+            }
             $instance = self::convert($input, $type, 'decode', $config);
             try {
                 $result = $instance->getResult();

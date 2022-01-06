@@ -1,11 +1,11 @@
 <?php
 namespace daddyy\Endecode {
-
     use LaLit\Array2XML;
 
     /**
      * A helper for encoding entities to strings
      * Can convert into Base64, json, csv, xml, serialized php strings and querystrings
+     * @author fiala.pvl@gmail.com
      */
     class Encode
     {

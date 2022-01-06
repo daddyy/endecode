@@ -1,6 +1,8 @@
 <?php
 namespace daddyy\Endecode {
-
+    /**
+     * @author fiala.pvl@gmail.com
+     */
     class Util
     {
         /**
