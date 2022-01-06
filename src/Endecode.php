@@ -20,9 +20,35 @@ namespace daddyy\Endecode {
             $class    = '\daddyy\Endecode\\' . ucfirst($direction);
             $instance = new $class;
             $call     = 'init' . ucfirst($type);
+            if (method_exists($instance, $call) == false) {
+                $call     = 'init';
+            }
             $instance->{$call}($input, $config);
             return $instance;
         }
+
+
+        /**
+         * method for conversion fom metric unit to metric unit
+         * @param     string|number   $input    input to be converted
+         * @param     array           $config   array of options for the decoder
+         * @return    string                    string converted to desired output format from input
+         */
+        public static function conversion($input, array $config = []): string
+        {
+            $config = is_array($config) ? $config : array($config);
+            $config = is_numeric(key($config)) && count($config) == 1 ? array('unit' => reset($config)) : $config;
+            $instance = self::endecode($input, '', 'conversion', $config);
+            try {
+                $result = $instance->getResult();
+            } catch (\Exception $e) {
+                print_r($e->getMessage());
+            }
+            $result = Util::toCharset($result, $config);
+
+            return $result;
+        }
+
 
         /**
          * Shortcut for decoding an array or object to requested string format

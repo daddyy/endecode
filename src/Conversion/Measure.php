@@ -106,7 +106,7 @@ namespace daddyy\Endecode\Conversion {
                             }
                         }
                         foreach ($tries as $try) {
-                            $test = $unit . $try;
+                            $test = $unit == 'default' ? $try : ($unit . $try);
                             if (($test == $measureTest && $unit && $try)) {
                                 $result['base_value'] = $inputValue * ($exponent != 1 ? pow(10, $exponent) : 1);
                                 $result['unit']       = $base['unit'];
